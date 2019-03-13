@@ -1,0 +1,33 @@
+{
+    "name": "json-atomic",
+    "version": "1.0.0",
+    "author": "Gryffon Bellish <owenbellish@gmail.com>",
+    "description": "An Atomic JSON DataBase Wrapper",
+    "main": "./dist/index.js",
+    "typings": "./typings/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "yarn build && git add -A",
+        "lint": "tslint -c tslint.json src/**/*",
+        "fix": "yarn lint --fix"
+    },
+    "files": [
+        "dist/**/*",
+        "typings/**/*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PyroTechniac/JSON-Atomic.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PyroTechniac/JSON-Atomic/issues"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "peerDependencies": {}
+}
