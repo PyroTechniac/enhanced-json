@@ -1,4 +1,4 @@
-export default class AtomicJson {
+export default class AsyncJson {
     private directory;
     constructor(directory: string);
     private init;
@@ -10,7 +10,7 @@ export default class AtomicJson {
     has(table: string, id: string): Promise<boolean>;
     getRandom(table: string): Promise<object>;
     create(table: string, document: string, data?: object): Promise<void>;
-    update(table: string, document: string, data: object): Promise<void>;
+    update(table: string, document: string, data: string): Promise<void>;
     replace(table: string, document: string, data: object): Promise<void>;
     delete(table: string, document: string): Promise<void>;
     getKeys(table: string): Promise<string[]>;
