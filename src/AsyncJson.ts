@@ -10,11 +10,11 @@ export default class AsyncJson {
     private async init(): Promise<void> {
         await fse.ensureDir(this.directory).catch((err: Error) => { throw err; });
     }
-    public hasTable(table: string): Promise<boolean> {
-        return fse.pathExists(resolve(this.directory, table));
+    public async hasTable(table: string): Promise<boolean> {
+        return await fse.pathExists(resolve(this.directory, table));
     }
-    public createTable(table: string) {
-        return fse.mkdir(resolve(this.directory, table));
+    public async createTable(table: string) {
+        return await fse.mkdir(resolve(this.directory, table));
     }
     public async deleteTable(table: string): Promise<void> {
         const exists = await this.hasTable(table);
@@ -37,25 +37,25 @@ export default class AsyncJson {
             return null;
         }
     }
-    public has(table: string, id: string): Promise<boolean> {
-        return fse.pathExists(resolve(this.directory, table, `${id}.json`));
+    public async has(table: string, id: string): Promise<boolean> {
+        return await fse.pathExists(resolve(this.directory, table, `${id}.json`));
     }
     public async getRandom(table: string) {
         const data = await this.getKeys(table);
         return await this.get(table, data[Math.floor(Math.random() * data.length)]);
     }
-    public create(table: string, document: string, data: object = {}): Promise<void> {
-        return fse.outputJSONAtomic(resolve(this.directory, table, `${document}.json`), { id: document, ...data });
+    public async create(table: string, document: string, data: object = {}): Promise<void> {
+        return await fse.outputJSONAtomic(resolve(this.directory, table, `${document}.json`), { id: document, ...data });
     }
     public async update(table: string, document: string, data: string): Promise<void> {
         const existent = await this.get(table, document);
         return fse.outputJSONAtomic(resolve(this.directory, table, `${document}.json`), Util.mergeObjects(existent || { id: document }, this.parseUpdateInput(data)));
     }
-    public replace(table: string, document: string, data: object): Promise<void> {
-        return fse.outputJSONAtomic(resolve(this.directory, table, `${document}.json`), { id: document, ...this.parseUpdateInput(data) });
+    public async replace(table: string, document: string, data: object): Promise<void> {
+        return await fse.outputJSONAtomic(resolve(this.directory, table, `${document}.json`), { id: document, ...this.parseUpdateInput(data) });
     }
-    public delete(table: string, document: string): Promise<void> {
-        return fse.unlink(resolve(this.directory, table, `${document}.id`));
+    public async delete(table: string, document: string): Promise<void> {
+        return await fse.unlink(resolve(this.directory, table, `${document}.id`));
     }
     public async getKeys(table: string): Promise<string[]> {
         const dir = resolve(this.directory, table);
