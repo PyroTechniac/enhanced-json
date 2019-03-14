@@ -6,7 +6,8 @@
         "declarationDir": "./typings",
         "declaration": true,
         "moduleResolution": "node",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "types": ["node", "lodash"]
     },
     "exclude": [
         "node_modules",
