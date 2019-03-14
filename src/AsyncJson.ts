@@ -14,7 +14,7 @@ export default class AsyncJson {
         return await fse.pathExists(resolve(this.directory, table));
     }
     public async createTable(table: string) {
-        return await fse.mkdir(resolve(this.directory, table));
+        return await fse.ensureDir(resolve(this.directory, table));
     }
     public async deleteTable(table: string): Promise<void> {
         const exists = await this.hasTable(table);

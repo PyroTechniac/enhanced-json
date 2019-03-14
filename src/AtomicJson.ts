@@ -4,7 +4,7 @@ import Util from './util/Util';
 export default class AtomicJson {
     private directory: string;
     constructor(directory: string) {
-        this.directory = directory;
+        this.directory = resolve(directory);
         this.init();
     }
     private async init(): Promise<void> {
@@ -14,7 +14,7 @@ export default class AtomicJson {
         return fse.pathExists(resolve(this.directory, table));
     }
     public createTable(table: string) {
-        return fse.mkdir(resolve(this.directory, table));
+        return fse.ensureDir(resolve(this.directory, table));
     }
     public deleteTable(table: string): Promise<void> {
         return this.hasTable(table)
