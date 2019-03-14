@@ -3,12 +3,14 @@ import { resolve } from 'path';
 import Util from './util/Util';
 export default class AsyncJson {
     private directory: string;
+    private _ready: boolean;
     constructor(directory: string) {
-        this.directory = directory;
+        this._ready = false;
+        this.directory = resolve(directory);
         this.init();
     }
     private async init(): Promise<void> {
-        await fse.ensureDir(this.directory).catch((err: Error) => { throw err; });
+        await fse.ensureDir(this.directory).then(() => this._ready = true).catch((err: Error) => { throw err; });
     }
     public async hasTable(table: string): Promise<boolean> {
         return await fse.pathExists(resolve(this.directory, table));

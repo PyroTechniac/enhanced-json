@@ -1,5 +1,6 @@
 export default class AsyncJson {
     private directory;
+    private _ready;
     constructor(directory: string);
     private init;
     hasTable(table: string): Promise<boolean>;
