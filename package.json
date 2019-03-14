@@ -28,11 +28,9 @@
     },
     "dependencies": {
         "advancedts": "^1.4.0",
-        "fs-nextra": "^0.4.3",
-        "lodash": "^4.17.11"
+        "fs-nextra": "^0.4.3"
     },
     "devDependencies": {
-        "@types/lodash": "^4.14.123",
         "@types/node": "^11.11.3",
         "ts-node": "^8.0.3",
         "tslint": "^5.14.0",

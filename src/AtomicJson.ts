@@ -3,14 +3,12 @@ import { resolve } from 'path';
 import Util from './util/Util';
 export default class AtomicJson {
     private directory: string;
-    private _ready: boolean;
     constructor(directory: string) {
-        this._ready = false;
         this.directory = resolve(directory);
         this.init();
     }
     private async init(): Promise<void> {
-        await fse.ensureDir(this.directory).then(() => this._ready = true).catch((err: Error) => { throw err; });
+        await fse.ensureDir(this.directory).catch((err: Error) => { throw err; });
     }
     public hasTable(table: string): Promise<boolean> {
         return fse.pathExists(resolve(this.directory, table));
@@ -21,6 +19,11 @@ export default class AtomicJson {
     public deleteTable(table: string): Promise<void> {
         return this.hasTable(table)
             .then((exists: boolean) => exists ? fse.emptyDir(resolve(this.directory, table)).then(() => fse.remove(resolve(this.directory, table))) : null);
+    }
+    public async getTables() {
+        const tables = await fse.readdir(this.directory);
+        tables.filter((table) => table.endsWith('.json')).map((name: string) => name.slice(0, -5));
+        return tables;
     }
     public async getAll(table: string, entries: string[]): Promise<object[]> {
         if (!Array.isArray(entries) || !entries.length) entries = await this.getKeys(table);

@@ -1,11 +1,11 @@
 export default class AtomicJson {
     private directory;
-    private _ready;
     constructor(directory: string);
     private init;
     hasTable(table: string): Promise<boolean>;
     createTable(table: string): Promise<void>;
     deleteTable(table: string): Promise<void>;
+    getTables(): Promise<string[]>;
     getAll(table: string, entries: string[]): Promise<object[]>;
     get(table: string, id: string): Promise<object | null>;
     has(table: string, id: string): Promise<boolean>;

@@ -25,5 +25,8 @@
         ],
         "member-ordering": false
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": ["node_modules"]
+    }
 }
