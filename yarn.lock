@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
   integrity sha512-wp6IOGu1lxsfnrD+5mX6qwSwWuqsdkKKxTN4aQc4wByHAKZJf9/D4KXPQ1POUjEbnCP5LMggB0OEFNY9OTsMqg==
 
-advancedts@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/advancedts/-/advancedts-1.4.0.tgz#2312f85fa118f736b58d7cbc467f5627c9980a60"
-  integrity sha512-bDoyeyDNxoiMfgfi2hbzw9+9HpaqrznbEAjzQVz2Tt8We025BThxXeke8sYqlHSQMtqFzPV+IPD7rbL1uUrFXg==
+advancedts@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/advancedts/-/advancedts-1.9.1.tgz#a4b131dcb61b8a24698947883cec24361e42564d"
+  integrity sha512-Bf3kyLKL61Nkcs0yT35z8Q90wOktkBEcg1nC6nzvQJp9kSuRiVVVhZYdEUaO3ItFe1Spf3UcAaxk4YcZ4+NjHA==
   dependencies:
     fs-nextra "^0.4.3"
 

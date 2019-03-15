@@ -27,7 +27,7 @@
         "node": ">=10.0.0"
     },
     "dependencies": {
-        "advancedts": "^1.4.0",
+        "advancedts": "^1.9.1",
         "fs-nextra": "^0.4.3"
     },
     "devDependencies": {
