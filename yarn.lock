@@ -7,12 +7,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
   integrity sha512-wp6IOGu1lxsfnrD+5mX6qwSwWuqsdkKKxTN4aQc4wByHAKZJf9/D4KXPQ1POUjEbnCP5LMggB0OEFNY9OTsMqg==
 
-advancedts@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/advancedts/-/advancedts-1.9.1.tgz#a4b131dcb61b8a24698947883cec24361e42564d"
-  integrity sha512-Bf3kyLKL61Nkcs0yT35z8Q90wOktkBEcg1nC6nzvQJp9kSuRiVVVhZYdEUaO3ItFe1Spf3UcAaxk4YcZ4+NjHA==
+advancedts@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/advancedts/-/advancedts-1.10.1.tgz#b5c3ca2e6b7402fdcb187f478915af5d2ae197ea"
+  integrity sha512-udkmjcHBEWVDlLmnUiuVtaiFmhmX9PFayfFJZAE33SFry+K+tSrHWcOmxesoqDPkWm6C+LY1gblAEDA+hk0e+A==
   dependencies:
-    fs-nextra "^0.4.3"
+    fs-nextra "^0.4.5"
+    long dcodeIO/long.js
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -137,7 +138,7 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
   integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
 
-fs-nextra@^0.4.3, fs-nextra@^0.4.5:
+fs-nextra@^0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/fs-nextra/-/fs-nextra-0.4.5.tgz#0f44a00dd6c0547adaf59ce875e59941d0c70664"
   integrity sha512-oY2o6j0izYzJWp2sow21SekkR3qeMZqHV5ZfNFvfKimFU7piw1/AWwiwbcWjuSfwrfCmHyHymWZOyNbKOzew5g==
@@ -196,6 +197,11 @@ js-yaml@^3.7.0:
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
+
+long@dcodeIO/long.js:
+  version "4.0.1"
+  uid "8181a6b50a2a230f0b2a1e4c4093f9b9d19c8b69"
+  resolved "https://codeload.github.com/dcodeIO/long.js/tar.gz/8181a6b50a2a230f0b2a1e4c4093f9b9d19c8b69"
 
 make-error@^1.1.1:
   version "1.3.5"
